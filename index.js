@@ -1,5 +1,12 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  for (let i = 0; i < array.length; i++) {
+    const diff = target - array[i];
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] === diff) return true;
+      else return false;
+    }
+  }
 }
 
 /* 
@@ -29,6 +36,9 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", hasTargetSum([1, 2, 5], 4));
+
+  console.log("should be true");
+  console.log("=>", hasTargetSum([1, 1, 111], 112));
 }
 
 module.exports = hasTargetSum;
